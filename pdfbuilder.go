@@ -11,6 +11,7 @@ var (
 	pageSize         = flag.String("page_size", "letter", "Size of each page in the output PDF. Defaults to 'letter'. See https://godoc.org/github.com/jung-kurt/gofpdf#pkg-constants for supported values.")
 	pageMarginInches = flag.Float64("page_margin", 0.25, "Margin around of the border of each page to not render QR codes.")
 	qrCodesPerRow    = flag.Int("qr_codes_per_row", 2, "Number of QR codes to fit per row. The QR code will stretch to fit the row width. The number of rows will depend on the height of each row.")
+	pageTitle        = flag.String("page_title", "A file for you", "String to be printed at the top of every page.")
 )
 
 type pos struct {
@@ -59,7 +60,7 @@ func imagesToPDF(imagePaths []string) (*gofpdf.Fpdf, error) {
 		if posCount == len(positions) {
 			pdf.AddPage()
 			pdf.SetFont("Arial", "", 11)
-			pdf.Write(0.15, fmt.Sprintf("Page %d", pdf.PageCount()))
+			pdf.Write(0.15, fmt.Sprintf("%s -- Page %d", *pageTitle, pdf.PageCount()))
 			posCount = 0
 		}
 		position := positions[posCount]
