@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QR Files</string>
+    <string name="helper_title">Scan some file-to-QR codes…</string>
+    <string name="remove">REMOVE</string>
+    <string name="save_to_device">save to device</string>
+    <string name="file_body">Hello, I am a sample file body. Sincerely, Sam.</string>
+    <string name="image_desc">Image if this file is an image.</string>
+    <string name="sample_filename">SOME_FILE.txt</string>
+    <string name="cannot_display_file_warning">UNABLE TO DISPLAY FILE CONTENTS. SAVE TO DEVICE AND USE AS YOUR HEART DESIRES.</string>
+</resources>

@@ -63,5 +63,6 @@ func ParseChunk(s string) *FileChunk {
 	parts := strings.Split(s, ":")
 	return &FileChunk{
 		name: parts[0],
+		// TODO
 	}
 }

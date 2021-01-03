@@ -1,5 +1,6 @@
 out
 test_data
+test_files
 tmp
 
 .exe

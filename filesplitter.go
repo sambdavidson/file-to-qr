@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"io/ioutil"
+	"math"
 	"os"
 	"path/filepath"
 
@@ -32,7 +33,7 @@ func Split(f *os.File, qrSizeLimit int) ([]*FileChunk, error) {
 	chunkLimit := qrSizeLimit - metadataLength(name, id.String())
 	fenc := base64.StdEncoding.EncodeToString(fbytes)
 	var part int32
-	total := int32(len(fenc) / chunkLimit)
+	total := int32(math.Ceil(float64(len(fenc)) / float64(chunkLimit)))
 	for true {
 		if len(fenc) < chunkLimit {
 			out = append(out, &FileChunk{
