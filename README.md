@@ -1,6 +1,6 @@
 # File to QR
 
-## _They say picture is worth 1000 QR codes._
+## _They say a picture is worth 1000 QR codes._
 
 Have you ever wanted to send _lossless_ files through the postal service with
 only your home printer? Now you can! 
@@ -11,9 +11,9 @@ only your home printer? Now you can!
 
 #### Encoding files to QR codes
 
-The encoding utility is writen in [Go](https://golang.org/) and you will need to have it install to run.
+The encoding utility is writen in [Go](https://golang.org/) and you will need to have it installed to run.
 
-At its simplest run the encoder with `go run` and the `--in_file` flag in the repository root.
+At its simplest, run the encoder with `go run` and the `--in_file` flag in the repository root. This will output an auto-named `pdf` to the `./out` folder in the repository.
 
 E.g.
 
@@ -21,7 +21,7 @@ E.g.
 go run . --in_file=path/to/file.png
 ```
 
-There are a number of flags to modify functionality
+There are a number of flags to modify functionality:
 
 ```
 -bytes_per_qr int
@@ -45,14 +45,14 @@ There are a number of flags to modify functionality
 
 #### Android App
 
-The android app was built in Android Studio with API 29+. You should be able to open the `./android_app/qr` folder in Android studio as a project and build. You might have to download or install certain API versions or depedencies to get the build to succeed.
+The android app was built in Android Studio with API 29+. You should be able to open the `./android_app/qr` folder in Android Studio as a project and build. You might have to download or install certain API versions or depedencies to get the build working.
 
 
 ### Contributing
 
 Anyone is welcome to contribute by sending me pull requests. This is a silly app concept that I currently don't intend to work on past this proof of concept. Some ideas of work that would benefit this project:
 
-- iPhone App (I currently don't have a Mac to build one).
+- iPhone app (I currently don't have a Mac to build one).
 - Website to perform the encodings.
 - Tests, refactoring, documentation, code health etc.
 
